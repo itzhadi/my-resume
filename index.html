@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #0f172a;     /* Deep slate background */
-            --bg-secondary: #1e293b; /* Slightly lighter section background */
-            --text-primary: #f8fafc; /* Almost white text */
-            --text-secondary: #94a3b8; /* Muted text for dates/details */
-            --accent: #38bdf8;       /* Bright light blue accent */
+            --bg-main: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -20,7 +20,6 @@
             color: var(--text-primary);
             line-height: 1.7;
         }
-        /* Hero Section */
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
             padding: 100px 20px 80px;
@@ -45,8 +44,6 @@
             margin: 20px auto 0;
             font-size: 1.1rem;
         }
-        
-        /* Layout & Common Styles */
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
         section { margin-bottom: 60px; }
         h2 {
@@ -57,11 +54,9 @@
             margin-bottom: 30px;
             position: relative;
         }
-        h2::after { /* The little accent underline */
+        h2::after {
             content: ''; display: block; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: var(--accent);
         }
-
-        /* Skills Badges Style */
         .skills-category { margin-bottom: 25px; }
         .skills-category h3 { font-size: 1.1rem; color: var(--accent); margin-bottom: 10px; }
         .tags-group { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -76,8 +71,6 @@
             transition: all 0.3s ease;
         }
         .tag:hover { border-color: var(--accent); transform: translateY(-2px); }
-
-        /* Timeline Experience Style */
         .timeline-block {
             border-left: 3px solid var(--bg-secondary);
             padding-left: 30px;
@@ -85,12 +78,10 @@
         }
         .company-name { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); }
         .total-tenure { color: var(--accent); font-weight: 600; margin-left: 10px; }
-        
         .role-item {
             position: relative;
             margin-bottom: 40px;
         }
-        /* The timeline dot */
         .role-item::before {
             content: ''; position: absolute; left: -38px; top: 5px; width: 14px; height: 14px;
             background: var(--accent); border-radius: 50%; border: 3px solid var(--bg-main);
@@ -100,8 +91,6 @@
         .role-item ul { padding-left: 20px; color: #cbd5e1; }
         .role-item li { margin-bottom: 10px; }
         .highlight { color: var(--accent); font-weight: 500; }
-
-        /* Contact & Footer */
         .contact-bar {
             background: var(--bg-secondary);
             padding: 30px;
@@ -122,7 +111,7 @@
 
 <header>
     <h1>Itzik Diei</h1>
-    <div class="title">Senior Java Backend Engineer & Tech Lead</div>
+    <div class="title">Senior Java Backend Engineer</div>
     <p class="tagline">
         Over 10 years of experience designing and delivering scalable microservices in enterprise environments. 
         Specializing in Java 21, Spring Boot, and resilient cloud architecture.
@@ -134,11 +123,7 @@
     <section id="about">
         <h2>Professional Summary</h2>
         <p>
-            Highly skilled Senior Backend Engineer with a proven track record of over a decade at Amdocs. 
-            [cite_start]Deep expertise in building resilient, scalable systems using **Java 21, Spring Boot, and Microservices** architecture[cite: 7].
-            [cite_start]Skilled in SQL optimization across PostgreSQL and Oracle databases[cite: 24].
-            [cite_start]Proven leadership as a **CR Lead**, mentoring developers, driving end-to-end solution design, and ensuring adherence to SOLID and Clean Code principles[cite: 9, 27, 33].
-            [cite_start]Possesses deep knowledge of CI/CD processes leveraging Jenkins and OpenShift[cite: 8].
+            [cite_start]Highly skilled Senior Backend Engineer with a proven track record of over a decade at Amdocs[cite: 7, 21]. [cite_start]Deep expertise in building resilient, scalable systems using **Java 21, Spring Boot, and Microservices** architecture[cite: 7, 22, 23]. [cite_start]Skilled in SQL optimization across PostgreSQL and Oracle databases[cite: 13, 24]. [cite_start]Proven leadership as a **CR Lead**, mentoring developers, driving end-to-end solution design, and ensuring adherence to SOLID and Clean Code principles[cite: 9, 27, 33, 35, 36]. [cite_start]Possesses deep knowledge of CI/CD processes leveraging Jenkins and OpenShift[cite: 8, 12, 25, 26].
         </p>
     </section>
 
@@ -147,36 +132,36 @@
         <div class="skills-category">
             <h3>Backend Core & Architecture</h3>
             <div class="tags-group">
-                <span class="tag">Java 21</span>
-                <span class="tag">Spring Boot</span>
-                <span class="tag">Microservices</span>
-                <span class="tag">RESTful APIs</span>
-                <span class="tag">Resilience4j</span>
-                <span class="tag">Feign Client</span>
-                <span class="tag">MapStruct</span>
+                [cite_start]<span class="tag">Java 21 [cite: 11]</span>
+                [cite_start]<span class="tag">Spring Boot [cite: 11]</span>
+                [cite_start]<span class="tag">Microservices [cite: 11]</span>
+                [cite_start]<span class="tag">RESTful APIs [cite: 11]</span>
+                [cite_start]<span class="tag">Resilience4j [cite: 11]</span>
+                [cite_start]<span class="tag">Feign Client [cite: 11]</span>
+                [cite_start]<span class="tag">MapStruct [cite: 11]</span>
             </div>
         </div>
         <div class="skills-category">
             <h3>DevOps, Data & Infrastructure</h3>
             <div class="tags-group">
-                <span class="tag">Kubernetes (K8s)</span>
-                <span class="tag">OpenShift</span>
-                <span class="tag">Jenkins CI/CD</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Oracle DB</span>
-                <span class="tag">SQL Optimization</span>
-                <span class="tag">SonarQube</span>
+                [cite_start]<span class="tag">Kubernetes (K8s) [cite: 12]</span>
+                [cite_start]<span class="tag">OpenShift [cite: 12]</span>
+                [cite_start]<span class="tag">Jenkins CI/CD [cite: 12]</span>
+                [cite_start]<span class="tag">PostgreSQL [cite: 13]</span>
+                [cite_start]<span class="tag">Oracle DB [cite: 13]</span>
+                [cite_start]<span class="tag">SQL Optimization [cite: 8]</span>
+                [cite_start]<span class="tag">SonarQube [cite: 12]</span>
             </div>
         </div>
          <div class="skills-category">
             <h3>Leadership & Methodologies</h3>
             <div class="tags-group">
-                <span class="tag">Technical Leadership</span>
-                <span class="tag">Mentoring</span>
-                <span class="tag">Code Review</span>
-                <span class="tag">SOLID Principles</span>
-                <span class="tag">Clean Code</span>
-                <span class="tag">Agile Scrum</span>
+                [cite_start]<span class="tag">Technical Leadership [cite: 15]</span>
+                [cite_start]<span class="tag">Mentoring [cite: 15]</span>
+                [cite_start]<span class="tag">Code Review [cite: 27]</span>
+                [cite_start]<span class="tag">SOLID Principles [cite: 27]</span>
+                [cite_start]<span class="tag">Clean Code [cite: 27]</span>
+                [cite_start]<span class="tag">Agile Scrum [cite: 29]</span>
             </div>
         </div>
     </section>
@@ -185,24 +170,24 @@
         <h2>Professional Experience</h2>
         
         <div style="margin-bottom: 30px;">
-            <span class="company-name">Amdocs</span>
-            <span class="total-tenure">(2014 - Present)</span>
+            [cite_start]<span class="company-name">Amdocs [cite: 21]</span>
+            [cite_start]<span class="total-tenure">(Apr 2014 - Present) [cite: 21]</span>
         </div>
 
         <div class="timeline-block">
             <div class="role-item">
-                <h3 class="role-title">CR Lead & Senior Backend Engineer</h3>
+                [cite_start]<h3 class="role-title">CR Lead [cite: 33]</h3>
                 [cite_start]<span class="role-date">2023 - Present [cite: 34]</span>
                 <ul>
                     [cite_start]<li>**Ownership & Delivery:** Owned the full lifecycle of Change Requests (CRs) from initial business analysis and design through implementation and final delivery[cite: 35].</li>
-                    [cite_start]<li>**Leadership:** Led design sessions, ensured technical alignment, mentored developers, and validated implementation quality via rigorous code reviews[cite: 36, 27].</li>
+                    [cite_start]<li>**Leadership:** Led design sessions, ensured technical alignment, mentored developers, and validated implementation quality via rigorous code reviews[cite: 36].</li>
                     [cite_start]<li>**Focal Point:** Acted as the primary technical focal point between business stakeholders, architects, and engineers for efficient delivery[cite: 37].</li>
                 </ul>
             </div>
 
             <div class="role-item">
-                <h3 class="role-title">Senior Java Backend Developer</h3>
-                [cite_start]<span class="role-date">Apr 2014 - 2023 [cite: 21]</span>
+                [cite_start]<h3 class="role-title">Senior Java Backend Developer [cite: 20]</h3>
+                [cite_start]<span class="role-date">Apr 2014 - 2023 [cite: 21, 34]</span>
                 <ul>
                     [cite_start]<li>**Microservices Development:** Designed and implemented scalable microservices and RESTful APIs using **Spring Boot and Java 21**[cite: 22].</li>
                     [cite_start]<li>**System Resilience:** Developed robust systems leveraging <span class="highlight">Resilience4j, Feign Client, and MapStruct</span> for high availability[cite: 23].</li>
@@ -216,8 +201,8 @@
     <section id="education" style="display: flex; gap: 40px; flex-wrap: wrap;">
         <div style="flex: 2; min-width: 300px;">
             <h2>Education</h2>
-            <h3 style="margin: 0; color: white;">B.Sc. in Software Engineering</h3>
-            <p style="color: var(--text-secondary); margin-top: 5px;">Sami Shamoon College of Engineering | [cite_start]2011-2014 [cite: 39, 40]</p>
+            [cite_start]<h3 style="margin: 0; color: white;">B.Sc. in Software Engineering [cite: 39]</h3>
+            [cite_start]<p style="color: var(--text-secondary); margin-top: 5px;">Sami Shamoon College of Engineering [cite: 40] | [cite_start]2011-2014 [cite: 40]</p>
         </div>
         <div style="flex: 1; min-width: 200px;">
              <h2>Languages</h2>
@@ -230,7 +215,7 @@
 
     <div class="contact-bar">
         <h2 style="border: none; margin-bottom: 10px;">Let's Connect</h2>
-        <p style="font-size: 1.1rem;">itzikdiei5@gmail.com | +972-52-4225084</p>
+        [cite_start]<p style="font-size: 1.1rem;">itzikdiei5@gmail.com [cite: 4] | [cite_start]+972-52-4225084 [cite: 5]</p>
         <a href="mailto:itzikdiei5@gmail.com" class="btn-cta">Send Me an Email</a>
     </div>
 
