@@ -1,102 +1,240 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>איציק דעי | Senior Backend Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Itzik Diei | Senior Java Backend Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
-            --light: #f8fafc;
+            --bg-main: #0f172a;     /* Deep slate background */
+            --bg-secondary: #1e293b; /* Slightly lighter section background */
+            --text-primary: #f8fafc; /* Almost white text */
+            --text-secondary: #94a3b8; /* Muted text for dates/details */
+            --accent: #38bdf8;       /* Bright light blue accent */
         }
         body {
-            font-family: 'Assistant', sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.7;
         }
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: white;
-            padding: 80px 20px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            padding: 100px 20px 80px;
             text-align: center;
+            border-bottom: 1px solid #1e40af;
         }
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-        h1 { margin: 0; font-size: 2.5rem; }
-        .tagline { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
-        .btn:hover { background: #1d4ed8; }
-        section { padding: 40px 0; border-bottom: 1px solid #e2e8f0; }
-        h2 { color: var(--primary); border-right: 4px solid var(--primary); padding-right: 15px; }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        header .title {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 10px;
         }
-        .skill-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .experience-item { margin-bottom: 30px; }
-        .date { color: #64748b; font-size: 0.9rem; }
-        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #64748b; }
+        header .tagline {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+        }
+        
+        /* Layout & Common Styles */
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+        section { margin-bottom: 60px; }
+        h2 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--bg-secondary);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        h2::after { /* The little accent underline */
+            content: ''; display: block; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: var(--accent);
+        }
+
+        /* Skills Badges Style */
+        .skills-category { margin-bottom: 25px; }
+        .skills-category h3 { font-size: 1.1rem; color: var(--accent); margin-bottom: 10px; }
+        .tags-group { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+        .tag:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+        /* Timeline Experience Style */
+        .timeline-block {
+            border-left: 3px solid var(--bg-secondary);
+            padding-left: 30px;
+            position: relative;
+        }
+        .company-name { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); }
+        .total-tenure { color: var(--accent); font-weight: 600; margin-left: 10px; }
+        
+        .role-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        /* The timeline dot */
+        .role-item::before {
+            content: ''; position: absolute; left: -38px; top: 5px; width: 14px; height: 14px;
+            background: var(--accent); border-radius: 50%; border: 3px solid var(--bg-main);
+        }
+        .role-title { font-size: 1.2rem; font-weight: 600; margin: 0 0 5px; color: white; }
+        .role-date { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px; display: block; }
+        .role-item ul { padding-left: 20px; color: #cbd5e1; }
+        .role-item li { margin-bottom: 10px; }
+        .highlight { color: var(--accent); font-weight: 500; }
+
+        /* Contact & Footer */
+        .contact-bar {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .btn-cta {
+            display: inline-block; margin-top: 20px; padding: 14px 35px;
+            background: var(--accent); color: var(--bg-main);
+            text-decoration: none; border-radius: 6px; font-weight: 700;
+            transition: background 0.3s;
+        }
+        .btn-cta:hover { background: #7dd3fc; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container">
-        <h1>איציק דעי</h1>
-        <p class="tagline">Senior Java Backend Engineer & CR Lead</p>
-        <a href="mailto:itzikdiei5@gmail.com" class="btn">בואו נדבר</a>
-    </div>
+    <h1>Itzik Diei</h1>
+    <div class="title">Senior Java Backend Engineer & Tech Lead</div>
+    <p class="tagline">
+        Over 10 years of experience designing and delivering scalable microservices in enterprise environments. 
+        Specializing in Java 21, Spring Boot, and resilient cloud architecture.
+    </p>
 </header>
 
 <div class="container">
+    
     <section id="about">
-        <h2>קצת עלי</h2>
-        <p>מהנדס Backend בכיר עם למעלה מעשור של ניסיון באמדוקס בבניית מערכות Enterprise מורכבות. מתמחה ב-Java 21, Microservices, ואופטימיזציה של פתרונות מקצה לקצה[cite: 11, 24, 35].</p>
+        <h2>Professional Summary</h2>
+        <p>
+            Highly skilled Senior Backend Engineer with a proven track record of over a decade at Amdocs. 
+            [cite_start]Deep expertise in building resilient, scalable systems using **Java 21, Spring Boot, and Microservices** architecture[cite: 7].
+            [cite_start]Skilled in SQL optimization across PostgreSQL and Oracle databases[cite: 24].
+            [cite_start]Proven leadership as a **CR Lead**, mentoring developers, driving end-to-end solution design, and ensuring adherence to SOLID and Clean Code principles[cite: 9, 27, 33].
+            [cite_start]Possesses deep knowledge of CI/CD processes leveraging Jenkins and OpenShift[cite: 8].
+        </p>
     </section>
 
     <section id="skills">
-        <h2>ארגז כלים טכנולוגי</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><strong>Core:</strong> Java 21, Spring Boot, Microservices [cite: 11]</div>
-            <div class="skill-card"><strong>DevOps:</strong> Jenkins, Kubernetes, OpenShift [cite: 12]</div>
-            <div class="skill-card"><strong>Databases:</strong> PostgreSQL, Oracle, MySQL [cite: 13]</div>
-            <div class="skill-card"><strong>Frontend:</strong> React, Flutter, UX focus [cite: 14, 32]</div>
+        <h2>Technical Expertise</h2>
+        <div class="skills-category">
+            <h3>Backend Core & Architecture</h3>
+            <div class="tags-group">
+                <span class="tag">Java 21</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Microservices</span>
+                <span class="tag">RESTful APIs</span>
+                <span class="tag">Resilience4j</span>
+                <span class="tag">Feign Client</span>
+                <span class="tag">MapStruct</span>
+            </div>
+        </div>
+        <div class="skills-category">
+            <h3>DevOps, Data & Infrastructure</h3>
+            <div class="tags-group">
+                <span class="tag">Kubernetes (K8s)</span>
+                <span class="tag">OpenShift</span>
+                <span class="tag">Jenkins CI/CD</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Oracle DB</span>
+                <span class="tag">SQL Optimization</span>
+                <span class="tag">SonarQube</span>
+            </div>
+        </div>
+         <div class="skills-category">
+            <h3>Leadership & Methodologies</h3>
+            <div class="tags-group">
+                <span class="tag">Technical Leadership</span>
+                <span class="tag">Mentoring</span>
+                <span class="tag">Code Review</span>
+                <span class="tag">SOLID Principles</span>
+                <span class="tag">Clean Code</span>
+                <span class="tag">Agile Scrum</span>
+            </div>
         </div>
     </section>
 
     <section id="experience">
-        <h2>ניסיון מקצועי</h2>
-        <div class="experience-item">
-            <h3>Senior Java Backend Developer & CR Lead</h3>
-            <p class="date">Amdocs | 2014 - היום [cite: 21, 34]</p>
-            <ul>
-                <li>הובלת מחזור חיים מלא של Change Requests (CRs) מאפיון ועד דליברי[cite: 35].</li>
-                <li>פיתוח Microservices ו-RESTful APIs ב-Java 21 ו-Spring Boot[cite: 22].</li>
-                <li>שיפור ביצועי מערכת ושאילתות SQL מורכבות[cite: 24].</li>
-                <li>מנטורינג למפתחים והובלת Code Reviews[cite: 36].</li>
-            </ul>
+        <h2>Professional Experience</h2>
+        
+        <div style="margin-bottom: 30px;">
+            <span class="company-name">Amdocs</span>
+            <span class="total-tenure">(2014 - Present)</span>
+        </div>
+
+        <div class="timeline-block">
+            <div class="role-item">
+                <h3 class="role-title">CR Lead & Senior Backend Engineer</h3>
+                [cite_start]<span class="role-date">2023 - Present [cite: 34]</span>
+                <ul>
+                    [cite_start]<li>**Ownership & Delivery:** Owned the full lifecycle of Change Requests (CRs) from initial business analysis and design through implementation and final delivery[cite: 35].</li>
+                    [cite_start]<li>**Leadership:** Led design sessions, ensured technical alignment, mentored developers, and validated implementation quality via rigorous code reviews[cite: 36, 27].</li>
+                    [cite_start]<li>**Focal Point:** Acted as the primary technical focal point between business stakeholders, architects, and engineers for efficient delivery[cite: 37].</li>
+                </ul>
+            </div>
+
+            <div class="role-item">
+                <h3 class="role-title">Senior Java Backend Developer</h3>
+                [cite_start]<span class="role-date">Apr 2014 - 2023 [cite: 21]</span>
+                <ul>
+                    [cite_start]<li>**Microservices Development:** Designed and implemented scalable microservices and RESTful APIs using **Spring Boot and Java 21**[cite: 22].</li>
+                    [cite_start]<li>**System Resilience:** Developed robust systems leveraging <span class="highlight">Resilience4j, Feign Client, and MapStruct</span> for high availability[cite: 23].</li>
+                    [cite_start]<li>**Database Optimization:** Optimized complex SQL queries and data structures across PostgreSQL and Oracle environments for maximum performance[cite: 24].</li>
+                    [cite_start]<li>**CI/CD & Quality:** Maintained CI/CD pipelines with Jenkins and OpenShift deployments, enforcing code quality via SonarQube[cite: 25, 26].</li>
+                </ul>
+            </div>
         </div>
     </section>
-</div>
 
-<footer>
-    <p>© 2024 איציק דעי | itzikdiei5@gmail.com [cite: 4]</p>
-</footer>
+    <section id="education" style="display: flex; gap: 40px; flex-wrap: wrap;">
+        <div style="flex: 2; min-width: 300px;">
+            <h2>Education</h2>
+            <h3 style="margin: 0; color: white;">B.Sc. in Software Engineering</h3>
+            <p style="color: var(--text-secondary); margin-top: 5px;">Sami Shamoon College of Engineering | [cite_start]2011-2014 [cite: 39, 40]</p>
+        </div>
+        <div style="flex: 1; min-width: 200px;">
+             <h2>Languages</h2>
+             <ul style="list-style: none; padding: 0; color: #cbd5e1;">
+                 [cite_start]<li><strong style="color: white;">Hebrew:</strong> Native [cite: 17]</li>
+                 [cite_start]<li><strong style="color: white;">English:</strong> Advanced [cite: 18]</li>
+             </ul>
+        </div>
+    </section>
+
+    <div class="contact-bar">
+        <h2 style="border: none; margin-bottom: 10px;">Let's Connect</h2>
+        <p style="font-size: 1.1rem;">itzikdiei5@gmail.com | +972-52-4225084</p>
+        <a href="mailto:itzikdiei5@gmail.com" class="btn-cta">Send Me an Email</a>
+    </div>
+
+</div>
 
 </body>
 </html>
